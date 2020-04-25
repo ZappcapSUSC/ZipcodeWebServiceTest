@@ -66,6 +66,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				 <configuration>
+				  <archiveClasses>true</archiveClasses>
+				  <webResources>
+				    <!-- in order to interpolate version from pom into appengine-web.xml -->
+				    <resource>
+				      <directory>${basedir}/src/main/WEB-INF</directory>
+				      <filtering>true</filtering>
+				      <targetPath>WEB-INF</targetPath>
+				    </resource>
+				  </webResources>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
